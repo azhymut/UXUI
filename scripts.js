@@ -1,9 +1,13 @@
-// scripts.js
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
+document.getElementById('subscribeButton').addEventListener('click', function() {
+    document.getElementById('emailPopup').classList.remove('hidden');
 });
+
+function closePopup() {
+    document.getElementById('emailPopup').classList.add('hidden');
+}
+
+function subscribe() {
+    var email = document.getElementById('emailInput').value;
+    alert('Obrigado por se inscrever, ' + email + '!');
+    closePopup();
+}
