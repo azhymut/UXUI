@@ -1,45 +1,36 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academia Emergencista</title>
+    <title>EcoCleaner</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="logo">Academia Emergencista</div>
-        <nav>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#metodologia">Metodologia</a></li>
-                <li><a href="#depoimentos">Depoimentos</a></li>
-            </ul>
-        </nav>
+        <div id="logo">EcoCleaner</div>
+        <div id="banner">
+            <h1>Bem-vindo ao Futuro da Limpeza Pet!</h1>
+            <p>Conheça o EcoCleaner, a inovação que desintegra e recicla cocô de cachorro automaticamente!</p>
+        </div>
     </header>
-    <main>
-        <section id="hero">
-            <h1>Capacitação avançada para médicos de emergência</h1>
-            <p>Descubra métodos de aprendizado rápidos e eficazes desenvolvidos durante a Segunda Guerra Mundial.</p>
-            <button>Inscreva-se agora</button>
-        </section>
-        <section id="sobre">
-            <h2>Sobre a Academia</h2>
-            <p>A Academia Emergencista oferece cursos especializados para médicos de UPAs e pronto-socorros, proporcionando conhecimento prático e teórico rápido.</p>
-        </section>
-        <section id="metodologia">
-            <h2>Nossa Metodologia</h2>
-            <p>Utilizamos técnicas desenvolvidas por especialistas japoneses e alemães na criptografia da Segunda Guerra Mundial para um aprendizado eficiente e direto.</p>
-        </section>
-        <section id="depoimentos">
-            <h2>Depoimentos</h2>
-            <p>"A metodologia aplicada foi transformadora para minha prática diária no pronto-socorro." - Dr. Silva</p>
-        </section>
-    </main>
+
+    <button id="subscribeButton">Quero Saber Mais!</button>
+
     <footer>
-        <p>© 2024 Academia Emergencista. Todos os direitos reservados.</p>
+        <p>Siga-nos nas redes sociais:</p>
+        <a href="https://facebook.com/ecocleaner">Facebook</a> |
+        <a href="https://twitter.com/ecocleaner">Twitter</a> |
+        <a href="https://instagram.com/ecocleaner">Instagram</a>
     </footer>
-    <script src="scripts.js"></script>
+
+    <div id="emailPopup" class="hidden">
+        <p>Inscreva-se para atualizações exclusivas:</p>
+        <input type="email" id="emailInput" placeholder="Digite seu e-mail aqui">
+        <button onclick="subscribe()">Inscrever</button>
+        <button onclick="closePopup()">Fechar</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
