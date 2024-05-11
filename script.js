@@ -1,21 +1,31 @@
-// Escutando o clique no botão de inscrição
-document.getElementById('subscribeButton').addEventListener('click', function() {
-    // Removendo a classe 'hidden' para mostrar o pop-up
-    document.getElementById('emailPopup').classList.remove('hidden');
-});
+const pages = [
+    "Texto da página 1 do Dom Quixote...",
+    "Texto da página 2 do Dom Quixote...",
+    "Texto da página 3 do Dom Quixote...",
+    "Texto da página 4 do Dom Quixote...",
+    "Texto da página 5 do Dom Quixote..."
+];
+let currentPage = 0;
 
-// Função para fechar o pop-up
-function closePopup() {
-    // Adicionando a classe 'hidden' para esconder o pop-up
-    document.getElementById('emailPopup').classList.add('hidden');
+function changePage(step) {
+    currentPage += step;
+    if (currentPage < 0) {
+        currentPage = 0;
+    } else if (currentPage > pages.length - 1) {
+        currentPage = pages.length - 1;
+    }
+    document.getElementById("text-content").innerText = pages[currentPage];
 }
 
-// Função para inscrever o usuário
-function subscribe() {
-    // Pegando o valor do input de e-mail
-    var email = document.getElementById('emailInput').value;
-    // Exibindo uma mensagem de agradecimento
-    alert('Obrigado por se inscrever, ' + email + '!');
-    // Fechando o pop-up após a inscrição
-    closePopup();
+function toggleTheme() {
+    const body = document.body;
+    if (body.classList.contains("dark-mode")) {
+        body.classList.replace("dark-mode", "light-mode");
+    } else {
+        body.classList.replace("light-mode", "dark-mode");
+    }
+}
+
+window.onload = function() {
+    document.getElementById("text-content").innerText = pages[currentPage];
 }
