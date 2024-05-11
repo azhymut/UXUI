@@ -1,20 +1,15 @@
-const pages = [
-    "Texto da página 1 do Dom Quixote...",
-    "Texto da página 2 do Dom Quixote...",
-    "Texto da página 3 do Dom Quixote...",
-    "Texto da página 4 do Dom Quixote...",
-    "Texto da página 5 do Dom Quixote..."
-];
-let currentPage = 0;
+let currentPage = 97; // Starting with page 97
 
 function changePage(step) {
+    const prevPage = document.getElementById(`page-${currentPage}`);
     currentPage += step;
-    if (currentPage < 0) {
-        currentPage = 0;
-    } else if (currentPage > pages.length - 1) {
-        currentPage = pages.length - 1;
+    const nextPage = document.getElementById(`page-${currentPage}`);
+    if (prevPage) prevPage.style.display = 'none';
+    if (nextPage) {
+        nextPage.style.display = 'block';
+    } else {
+        currentPage -= step; // Revert change if no next/prev page
     }
-    document.getElementById("text-content").innerText = pages[currentPage];
 }
 
 function toggleTheme() {
@@ -26,6 +21,4 @@ function toggleTheme() {
     }
 }
 
-window.onload = function() {
-    document.getElementById("text-content").innerText = pages[currentPage];
-}
+document.getElementById(`page-${currentPage}`).style.display = 'block'; // Show initial page
