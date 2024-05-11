@@ -1,36 +1,26 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoCleaner</title>
+    <title>Leitor de Textos - Dom Quixote</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header>
-        <div id="logo">EcoCleaner</div>
-        <div id="banner">
-            <h1>Bem-vindo ao Futuro da Limpeza Pet!</h1>
-            <p>Conheça o EcoCleaner, a inovação que desintegra e recicla cocô de cachorro automaticamente!</p>
+<body class="dark-mode">
+    <div id="book-container">
+        <div id="text-content">
+            <p id="page-97">[Texto da página 97 do Dom Quixote.]</p>
+            <p id="page-98" style="display:none;">[Texto da página 98 do Dom Quixote.]</p>
+            <p id="page-99" style="display:none;">[Texto da página 99 do Dom Quixote.]</p>
+            <p id="page-100" style="display:none;">[Texto da página 100 do Dom Quixote.]</p>
+            <p id="page-101" style="display:none;">[Texto da página 101 do Dom Quixote.]</p>
         </div>
-    </header>
-
-    <button id="subscribeButton">Quero Saber Mais!</button>
-
-    <footer>
-        <p>Siga-nos nas redes sociais:</p>
-        <a href="https://facebook.com/ecocleaner">Facebook</a> |
-        <a href="https://twitter.com/ecocleaner">Twitter</a> |
-        <a href="https://instagram.com/ecocleaner">Instagram</a>
-    </footer>
-
-    <div id="emailPopup" class="hidden">
-        <p>Inscreva-se para atualizações exclusivas:</p>
-        <input type="email" id="emailInput" placeholder="Digite seu e-mail aqui">
-        <button onclick="subscribe()">Inscrever</button>
-        <button onclick="closePopup()">Fechar</button>
     </div>
-
+    <div class="navigation">
+        <button onclick="changePage(-1)">Página Anterior</button>
+        <button onclick="changePage(1)">Próxima Página</button>
+        <button onclick="toggleTheme()">Mudar Tema</button>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
