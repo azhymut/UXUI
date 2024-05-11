@@ -1,24 +1,21 @@
-let currentPage = 97; // Starting with page 97
+// Escutando o clique no botão de inscrição
+document.getElementById('subscribeButton').addEventListener('click', function() {
+    // Removendo a classe 'hidden' para mostrar o pop-up
+    document.getElementById('emailPopup').classList.remove('hidden');
+});
 
-function changePage(step) {
-    const prevPage = document.getElementById(`page-${currentPage}`);
-    currentPage += step;
-    const nextPage = document.getElementById(`page-${currentPage}`);
-    if (prevPage) prevPage.style.display = 'none';
-    if (nextPage) {
-        nextPage.style.display = 'block';
-    } else {
-        currentPage -= step; // Revert change if no next/prev page
-    }
+// Função para fechar o pop-up
+function closePopup() {
+    // Adicionando a classe 'hidden' para esconder o pop-up
+    document.getElementById('emailPopup').classList.add('hidden');
 }
 
-function toggleTheme() {
-    const body = document.body;
-    if (body.classList.contains("dark-mode")) {
-        body.classList.replace("dark-mode", "light-mode");
-    } else {
-        body.classList.replace("light-mode", "dark-mode");
-    }
+// Função para inscrever o usuário
+function subscribe() {
+    // Pegando o valor do input de e-mail
+    var email = document.getElementById('emailInput').value;
+    // Exibindo uma mensagem de agradecimento
+    alert('Obrigado por se inscrever, ' + email + '!');
+    // Fechando o pop-up após a inscrição
+    closePopup();
 }
-
-document.getElementById(`page-${currentPage}`).style.display = 'block'; // Show initial page
